@@ -13,8 +13,11 @@
  * HISTORY:
  * Date      	By	Comments
  * ----------	---	----------------------------------------------------------
+ * 2020-09-11	pde	Added reference information
  */
 
+// Based off from information found here:
+// https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports/creating-a-new-serial
 
 #include <Arduino.h>
 #include "wiring_private.h"
