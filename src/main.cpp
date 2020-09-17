@@ -22,25 +22,25 @@
 #include <Arduino.h>
 #include "wiring_private.h"
 
+Uart MyPrinter(&sercom2, PIN_PA15, PIN_PA14, SERCOM_RX_PAD_3, UART_TX_PAD_2);
 
-Uart MyPrinter (&sercom2, PIN_PA15, PIN_PA14, SERCOM_RX_PAD_3, UART_TX_PAD_2);
-
-void SERCOM2_Handler() {
+void SERCOM2_Handler()
+{
   MyPrinter.IrqHandler();
 }
 
 // put your setup code here, to run once:
-void setup() {
+void setup()
+{
 
   // Assign pin 14 and 15 SERCOM function
   pinPeripheral(PIN_PA14, PIO_SERCOM);
   pinPeripheral(PIN_PA15, PIO_SERCOM);
 
   MyPrinter.begin(9600);
-
-
 }
 
 // put your main code here, to run repeatedly:
-void loop() {
+void loop()
+{
 }
