@@ -21,8 +21,10 @@
 
 #include <Arduino.h>
 #include "wiring_private.h"
+#include "SureMark.hpp"
 
 Uart MyPrinter(&sercom2, PIN_PA15, PIN_PA14, SERCOM_RX_PAD_3, UART_TX_PAD_2);
+SureMark printer(&MyPrinter);
 
 void SERCOM2_Handler()
 {
@@ -43,4 +45,5 @@ void setup()
 // put your main code here, to run repeatedly:
 void loop()
 {
+  printer.selectFont(Font_A);
 }

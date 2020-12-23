@@ -4,7 +4,7 @@
  *
  * Created: 2020-12-19 10:47 by Philippe Devaux
  * -----
- * Last Modified: 2020-12-19 11:52
+ * Last Modified: 2020-12-23 08:50
  * Modified by:   Philippe Devaux
  * -----
  * Copyright (c) 2020 DeepCore Systems
@@ -37,22 +37,14 @@ enum PrintFont
 class SureMark
 {
 private:
-  Uart _serial;
-  void sendCommand();
+  HardwareSerial *_serial;
 
 public:
-  void begin(unsigned long baudRate);
+  void begin(unsigned long);
   void setDefault();
-  void selectFont(PrintFont font);
-  SureMark(Uart &serial);
+  void selectFont(PrintFont);
+  SureMark(HardwareSerial *);
   ~SureMark();
 };
 
-SureMark::SureMark(Uart &serial)
-{
-  _serial = serial;
-}
 
-SureMark::~SureMark()
-{
-}
